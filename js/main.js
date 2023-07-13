@@ -103,7 +103,21 @@ const resta = (a, b) => a - b;
 console.log(suma(2, 3));
 console.log(resta(10-3)); */
 
-var unNumero = 30;
+/* var unNumero = 30;
 var otroNumero =  "20";
 var resultado = unNumero + otroNumero;
-console.log(resultado);
+console.log(resultado); */
+
+/* let nombreUno = "Cristian "
+let apellidoUno = "Walz"
+let edad = 28
+let sumaEntre = nombreUno + apellidoUno
+
+prompt("Tu nombre es : ", nombreUno)
+prompt ("Tu apellido es :", apellidoUno)
+prompt("Tu edad es : ", edad) */
+
+let textUno = "Cristian "
+let textDos = "Walz"
+let sumaEntre = textUno + textDos
+prompt("Tu nombre y edad es: ", sumaEntre)
