@@ -117,7 +117,8 @@ prompt("Tu nombre es : ", nombreUno)
 prompt ("Tu apellido es :", apellidoUno)
 prompt("Tu edad es : ", edad) */
 
-let textUno = "Cristian "
+/* let textUno = "Cristian "
 let textDos = "Walz"
 let sumaEntre = textUno + textDos
 prompt("Tu nombre y edad es: ", sumaEntre)
+ */

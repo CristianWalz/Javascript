@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "DM Sans", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+ul,
+ol,
+li {
+  list-style-type: none;
+}
+
+p {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto", sans-serif;
+}
+
+.header-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  background-color: black;
+  color: white;
+}
+
+.left-container {
+  display: flex;
+}
+.left-container_img {
+  width: 30px;
+  height: 20px;
+}
+.left-container_h1 {
+  font-size: 1rem;
+}
+
+.nav-center {
+  display: flex;
+  gap: 6px;
+  font-size: 0.8rem;
+}
+
+.right-container {
+  display: flex;
+  gap: 6px;
+  font-size: 0.8rem;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .header-wrapper {
+    height: 100px;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .left-container {
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 0.7rem;
+    font-size: 1rem;
+  }
+  .left-container_img {
+    width: 40px;
+    height: 30px;
+  }
+  .nav-center {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 1024px) and (max-width: 2200px) {
+  .header-wrapper {
+    height: 100px;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .left-container {
+    align-items: center;
+    gap: 6px;
+    font-size: 1rem;
+  }
+  .left-container_img {
+    width: 50px;
+    height: 30px;
+  }
+  .right-container {
+    font-size: 1rem;
+  }
+  .nav-center {
+    font-size: 1rem;
+  }
+}
+.container-footer {
+  background-color: lightcoral;
+  display: grid;
+  grid-gap: 6px;
+  text-align: center;
+}
+.container-footer .column-3 {
+  display: grid;
+}
+
+.container-productos {
+  display: grid;
+  grid-gap: 6px;
+}
+.container-productos .card_1 {
+  object-fit: cover;
+  width: 100%;
+  height: 350px;
+}
+.container-productos .card_2 {
+  object-fit: cover;
+  width: 100%;
+  height: 350px;
+}
+.container-productos .card_3 {
+  object-fit: cover;
+  width: 100%;
+  height: 350px;
+}
+
+.container-img .img-inicio {
+  position: relative;
+  width: 100%;
+  object-fit: cover;
+}
+.container-img .welcome {
+  font-weight: bold;
+  margin: 6px;
+  background-color: lightgreen;
+  border-radius: 3px;
+  position: absolute;
+  bottom: 72.3%;
+  left: 15%;
+}
+
+.description-index {
+  background-color: lightgray;
+}
+
+/*# sourceMappingURL=styles.css.map */

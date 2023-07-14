@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-    <header>
+    <header class="header-wrapper">
             <div class="left-container">
-                <img src="" alt="Ludus">
-                <h1>Gimnasio Ludus</h1>
+                <img class="left-container_img" src="./img/logo.ludus.jpg" alt="Ludus">
+                <h1 class="left-container_h1">Gimnasio Ludus</h1>
             </div>
             <nav>
                 <ul class="nav-center">
@@ -25,32 +25,37 @@
                 <ul class="right-container">
                     <li><a href="#">Instagram</a></li>
                     <li><a href="#">Facebook</a></li>
-                    <li><a href="#">Whatsapp</a></li>
+                    <li><a href="#"><i class="bi bi-whatsapp"></i>Whatsapp</a></li>
                 </ul>
             </nav>
     </header>
-    <main class="main">
-        <section>
-            <img src="" alt="Training">
-            <p>Bienvenidos a Gimnasio Ludus</p>
+    <main>
+        <section class="container-img">
+            <img class="img-inicio" src="./img/ludus4.jpg" alt="Training">
+            <p class="welcome">Gimnasio Ludus</p>
         </section>
+        <div class="description-index">
+            <h2 class="description-index_h2">Bienvenido a Gimnasio Ludus</h2><br>
+            <p class="description-index_p">En <b>Gimnasio</b> <b>Ludus</b> nos comprometemos a ayudarte a alcanzar tus metas de acondicionamiento físico y bienestar. Nuestro <b>gimnasio</b> cuenta con equipos modernos, entrenadores expertos y una amplia variedad de clases para que puedas disfrutar de una experiencia de entrenamiento completa.</p>
+            <p class="description-index_p">Ya sea que busques perder peso, ganar fuerza, mejorar tu resistencia o simplemente mantenerte en forma, en <b>Ludus</b> encontrarás todo lo que necesitas para lograrlo. Nuestro enfoque se basa en ofrecer un ambiente amigable, motivador y seguro donde te sientas cómodo y puedas superar tus límites.</p>
+        </div>
         <section class="card">
             <div class="container-productos">
-                <img src="" alt="Productos">
+                <img class="card_1" src="./img/suplementacion1.jpg" alt="Productos">
                 <span>Precio $3500</span>
                 <p>Descripcion</p>
             </div>
         </section>
         <section class="card">
             <div class="container-productos">
-                <img src="" alt="Productos">
+                <img class="card_2" src="./img/Suplementacion2.jpg" alt="Productos">
                 <span>Precio $3500</span>
                 <p>Descripcion</p>
             </div>
         </section>
         <section class="card">
             <div class="container-productos">
-                <img src="" alt="Productos">
+                <img class="card_3" src="./img/Suplementacion3.jpg" alt="Productos">
                 <span>Precio $3500</span>
                 <p>Descripcion</p>
             </div>
@@ -79,26 +84,33 @@
         <section>
             <div class="Nosotros">
                 <h2>Nosotros</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti nam quos voluptatem, optio blanditiis odio ex et expedita, maxime maiores autem adipisci beatae quia accusamus quo exercitationem culpa, sint eum!</p>
+                <p>Nuestro gimnasio cuenta con modernas instalaciones diseñadas para brindarte el mejor ambiente de entrenamiento. Disponemos de una amplia sala de entrenamiento equipada con máquinas de última generación, un área de pesas, un estudio para clases de grupo y vestuarios cómodos.</p>
+                <p>Además, contamos con profesionales capacitados que te guiarán en tu entrenamiento y te brindarán el apoyo necesario para alcanzar tus objetivos. Estamos comprometidos con tu éxito y trabajamos para brindarte la mejor experiencia en cada visita.</p>
             </div>
         </section>
-        <footer>
-            <section class="container-footer">
-                <div class="column-1">
-                    <p>Horario de atención: Informa a los visitantes sobre los horarios en los que el gimnasio está abierto. Puedes incluir los días de la semana y los horarios de apertura y cierre.</p>
-                </div>
-                <div class="column-2">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12579.576427468264!2d-57.5652992!3d-37.9796005!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9584d99b4672ea79%3A0xac7dbbf1944f7e2b!2sGimnasio%20Ludus!5e0!3m2!1ses!2sar!4v1689015655145!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-                <nav>
-                    <ul class="column-3">
-                        <li><a href="#"></a>Facebook</li>
-                        <li><a href="#"></a>Instagram</li>
-                        <li><a href="#"></a>Whatsapp</li>
-                    </ul>
-                </nav>
-            </section>
-        </footer>
     </main>
+    <footer>
+        <section class="container-footer">
+            <div class="column-1">
+                <h3>Contacto</h3>
+                <p>Si tienes alguna pregunta, sugerencia o deseas más información sobre nuestros servicios, no dudes en contactarnos. Estamos aquí para ayudarte.</p>
+                <p>Puedes encontrarnos en la siguiente dirección:</p>
+                <p>Av. Principal 123, Ciudad Fitness</p>
+                <p>Teléfono: 123-456-7890</p>
+            </div>
+            <div class="column-2">
+                <!-- <h3>Ubicación</h3>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12579.576427468264!2d-57.5652992!3d-37.9796005!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9584d99b4672ea79%3A0xac7dbbf1944f7e2b!2sGimnasio%20Ludus!5e0!3m2!1ses!2sar!4v1689015655145!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+            </div>
+            <nav>
+                <ul class="column-3">
+                    <h3>Redes Sociales</h3>
+                    <li><a href="#"></a>Facebook</li>
+                    <li><a href="#"></a>Instagram</li>
+                    <li><a href="#"></a>Whatsapp</li>
+                </ul>
+            </nav>
+        </section>
+    </footer>
 </body>
 </html>

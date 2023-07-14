@@ -1,0 +1,12 @@
+.container-footer {
+    background-color: lightcoral;
+    display: grid;
+    grid-gap: 6px;
+    text-align: center;
+
+    .column-1 {
+    }
+    .column-3 {
+        display: grid;
+    }
+}
