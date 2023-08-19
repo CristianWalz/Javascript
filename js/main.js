@@ -324,9 +324,72 @@ while (x >= 0) {
   };  */
 
 
+/* let saludar = function(nombre) {
+    console.log("Hola " + nombre)
+}
+saludar("Cristian"); */
 
+//Escribir una función a la que se le pase una cadena <nombre> y muestre por pantalla el saludo ¡hola <nombre>!
 
+/* let nombre = function(nombre) {
+    console.log("Hola " + nombre)
+}
+nombre("Walz") */
 
+// Escribir una función que reciba un número entero positivo y devuelva su factorial.
+
+/* let calcularFactorial = function(numero) {
+
+}
+let numeroEntero = 5
+let factorial = calcularFactorial(numeroEntero)
+console.log(`El factorial de ${numeroEntero} es: ${factorial}`); */
+
+// Escribir una función que calcule el total de una factura tras aplicarle el IVA. La función debe recibir la cantidad sin IVA y el porcentaje de IVA a aplicar, y devolver el total de la factura. Si se invoca la función sin pasarle el porcentaje de IVA, deberá aplicar un 21%.
+
+// Suma y Resta: Escribe una función que tome dos números como argumentos y devuelva la suma y la resta de esos dos números.
+
+/* let sumaYresta = function(a, b) {
+    return(a , b)
+}
+console.log(10 + 5) */
+
+// Número Mayor: Escribe una función que tome tres números como argumentos y devuelva el número más grande de los tres.
+
+/* let numeroMayor = function(a , b , c) {
+    if (a >= b && a >= c) {
+        return a;
+  } else if (b >= a && b >= c) {
+    return b;
+  } else { 
+    return c;
+  }
+} 
+let resultado = numeroMayor(34, 5, 9)
+console.log("El numero mas grande es " + resultado) */
+
+//Escribir una función que muestre por pantalla el saludo ¡Hola amiga! cada vez que se la invoque.
+
+/* function saludar(nombre) {
+    console.log("Hola amiga")
+}
+saludar() */
+
+// 2. Escribir una función a la que se le pase una cadena <nombre> y muestre por pantalla el saludo ¡hola <nombre>!.
+
+/* function nombre(nombre) {
+    console.log("Hola " + nombre)
+}
+nombre("Cristian") */
+
+ //Escribir una función que reciba un número entero positivo y devuelva su factorial.
+
+// Escribir una función que calcule el total de una factura tras aplicarle el IVA. La función debe recibir la cantidad sin IVA y el porcentaje de IVA a aplicar, y devolver el total de la factura. Si se invoca la función sin pasarle el porcentaje de IVA, deberá aplicar un 21%.
+/* 
+function total (a , b) {
+    let totalConIva = (a * 1.21)
+    return totalConIva 
+} if(b) */
 
 
 
@@ -384,3 +447,181 @@ if (nombreHincha === hincha.toLocaleLowerCase()) { //-- Al final de .toLocaleLow
     alert("Respuesta incorrecta")
 }  
  */
+
+
+// Ejercicios de ARRAYS y sus MÉTODOS
+
+ //1. Escribir un programa que almacene las asignaturas de un curso (por ejemplo
+   // Matemáticas, Física, Química, Historia y Lengua) en un array y la muestre por
+    //pantalla.
+
+/* let cursos = ["Matemáticas", "Física", "Química", "Historia", "Lengua"]
+console.log(cursos) */
+
+// 2. Escribir un programa que almacene las asignaturas de un curso (por ejemplo
+//Matemáticas, Física, Química, Historia y Lengua) en un array y la muestre por
+//pantalla el mensaje Yo estudio <asignatura>, donde <asignatura> es cada una de
+//las asignaturas del array.
+
+/* let cursos = ["Matemáticas", "Física", "Química", "Historia", "Lengua"]
+alert("Yo estudio " +  cursos.join(", ")) */
+
+//3. Escribir un programa que almacene las asignaturas de un curso (por ejemplo
+//    Matemáticas, Física, Química, Historia y Lengua) en un array, pregunte al usuario
+//    la nota que ha sacado en cada asignatura, y después las muestre por pantalla con
+//    el mensaje En <asignatura> has sacado <nota> donde <asignatura> es cada una
+//    des las asignaturas del array y <nota> cada una de las correspondientes notas
+//    introducidas por el usuario.
+
+// Paso 1: Crear el array con las asignaturas
+/* let asignaturas = ["Matemáticas", "Física", "Química", "Historia", "Lengua"];
+
+// Paso 2: Crear un array vacío para almacenar las notas
+let notas = [];
+
+// Paso 3: Utilizar un bucle for para preguntar al usuario las notas
+for (let i = 0; i < asignaturas.length; i++) {
+  // Pedir la nota al usuario para cada asignatura
+  let nota = prompt(`Ingrese la nota para ${asignaturas[i]}:`);
+
+  // Agregar la nota ingresada al array de notas
+  notas.push(nota);
+}
+
+// Paso 4: Mostrar las notas por pantalla
+for (let i = 0; i < asignaturas.length; i++) {
+  console.log(`En ${asignaturas[i]} has sacado ${notas[i]}`);
+} */
+
+// 4. Escribir un programa que pregunte al usuario los números ganadores de la lotería
+//primitiva, los almacene en un array y los muestre por pantalla ordenados de menor
+//a mayor.
+
+/* let usuario = Number(prompt("Ingrese cantidad de números a cargar"))
+let numeros = []
+for (let i = 0; i < usuario; i++) {
+    let numero = Number(prompt("Ingrese numero"))
+    numeros.push(numero)
+}
+console.log(numeros)
+console.log(numeros.sort()) */ //Ingresa numeros de menor a mayor con .sort
+
+// 5. Escribir un programa que almacene en un array los números del 1 al 10 y los muestre por pantalla en orden inverso separados por comas.
+
+/* et numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+numeros.reverse() // .reverse me permite romper la estructura y dar vueltas los numeros
+alert(numeros.join(" , ")) */
+
+//6. Escribir un programa que almacene las asignaturas de un curso (por ejemplo Matemáticas, Física, Química, Historia y Lengua) en un array, pregunte al usuario la nota que ha sacado en cada asignatura y elimine del array las asignaturas aprobadas. Al final el programa debe mostrar por pantalla las asignaturas que e usuario tiene que repetir.
+
+/* let asignaturas = ["Matemáticas", "Física", "Química", "Historia", "Lengua"];
+let usuario = Number(prompt("Que nota te sacaste en " + (asignaturas)))
+
+for (let i = 0; i < asignaturas; i++) { */
+
+/* function saludar(){
+    alert("Hola amigo");
+} */
+// 2. Escribir una función a la que se le pase una cadena <nombre> y muestre
+// por pantalla el saludo ¡hola <nombre>!.
+
+// 2. Escribir una función a la que se le pase una cadena <nombre> y muestre
+// por pantalla el saludo ¡hola <nombre>!.
+/* function saludar(nombre) {
+    console.log(`Hola ${nombre  }` )
+}
+saludar("Fer") */
+
+
+
+
+
+/* let passGuardada = "1234"
+
+const login = () => {
+    let ingresar = false
+    for (let i = 3 ;i > 0 ; i--){
+        let passIngresada = prompt(`Ingresa tu contraseña. Tienes ${i} intentos`)
+
+    if(passIngresada === passGuardada) {
+        alert("El login fue exitoso!")
+        ingresar = true
+        break
+    }else {
+        alert("Contraseña incorrecta")
+    }
+    return ingresar
+  }
+}
+if(login()) {
+    let saldo = 50000
+    let opcion = prompt (`Elegi una opcion:
+                            \n 1- Saldo
+                            \n 2- Retirar efectivo
+                            \n 3- Depositar
+                            \n Escribe "ESC" para salir`).toUpperCase()
+    while(opcion != "ESC"){
+        switch(opcion) {
+            case "1":
+                alert(`Tu saldo actual es de $${saldo}`)
+                break
+                case "2":
+                    let retirar = +(prompt(`Ingresa tu monto a retirar`))
+                    if(isNaN(retirar)){
+                        alert("Error debe ingresar numeros")
+                        else {
+                            if(retirar <= saldo ) {
+                                saldo -= retirar
+                                alert(`Retiro exitoso, tu saldo actual es de `)
+                            }
+                        }
+                    }
+        }
+    }
+    }else {
+        console.log("Se te ha bloqueado tu tarjeta")
+    } */
+
+
+// Imprimir números pares del 1 al 20:
+
+/* for (let i = 2; i <= 20; i += 2) {
+    console.log(`Ahora ${i} vale ${i} `)
+    
+} */
+
+// Suma de números del 1 al 100: Calcula la suma de todos los números del 1 al 100 utilizando un ciclo for
+
+/* let suma = 0
+
+for (let i = 0; i <= 100; i++) {
+    console.log(`Ahora ${i} vale hasta el numero 100`)
+    suma += i;
+}
+console.log(`La suma de todos los numeros da ${suma}`) */
+
+// Tabla de multiplicar: Imprime la tabla de multiplicar de un número específico utilizando un ciclo for. Por ejemplo, la tabla de multiplicar del 5.
+
+/* let numero = 5
+
+for (let i = 1; i <= 10; i ++) {
+    let resultado = numero * i;
+    console.log(`${numero} x ${i} = ${resultado}`)
+} */
+
+// Contar vocales en una cadena: Dada una cadena ingresada por el usuario, cuenta cuántas vocales (a, e, i, o, u) hay utilizando un ciclo for
+
+/* let cadena = prompt("Ingresa una cadena de texto:");
+let contadorVocales = 0;
+
+for (let i = 0; i < cadena.length; i++) {
+    let letra = cadena[i].toLowerCase();
+    if (letra === "a" || letra === "e" || letra === "i" || letra === "o" || letra === "u") {
+        contadorVocales++;
+    }
+}
+
+console.log(`La cadena "${cadena}" tiene ${contadorVocales} vocales.`);
+ */
+
+// Imprimir números en reversa: Imprime los números del 10 al 1 en orden descendente utilizando un ciclo for.
