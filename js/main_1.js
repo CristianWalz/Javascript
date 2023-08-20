@@ -14,30 +14,50 @@ let productos = [
     { id: 21, nombre: "Termica", categoria: "indumentaria", stock: 4, precio: 10000 },
     { id: 22, nombre: "Pantalon", categoria: "indumentaria", stock: 5, precio: 8000 },
 ]
+// Agregar producto a un array (push)
 
-/* let salida = productos.map(producto => `ID : ${producto.id} - Nombre: ${producto.nombre}  `)
-alert(salida.join("\n")) */
+let nuevoProducto = {
+  id: 23,
+  nombre: "Bcaa",
+  categoria: "suplementacion",
+  stock: 4,
+  precio: 6500
+}
+
+productos.push(nuevoProducto);
+
+console.log(productos)
+
 
 let mensaje = "1 - Para lista de productos\n2 - Para ver informacion del producto \n3 - Agregar productos al carrito \n4 - Filtrar por categoria \n5 - Finalizar compra \n0 - Para salir"
 
 let opcion
+
+let carrito = []
 
 do {
   opcion = Number(prompt("Bienvenidos a Ludus\n" + mensaje))
   if(opcion === 1) {
     alert(listar(productos))
   }else if (opcion === 2) {
-    let id = Number(prompt("Ingrese el id de producto\n" + listar(productos)))
+    let id = Number(prompt("Ingrese el id de producto para mas información\n" + listar(productos)))
     infoDelProducto(id)
   }else if (opcion === 4 ) {
-    let categoria = prompt("Ingrese categoría:\n Suplementación \n       o      \n Indumentaria").toLocaleLowerCase()
-    let productosFiltrados = productos.filter(producto => producto.categoria === categoria)
-    alert(listar(productosFiltrados))
+    let categoria = prompt("Ingrese categoría:\n Suplementación \n       o      \n Indumentaria").toLocaleLowerCase();
+    let mensajeError = `Categoria ${categoria} ingresada no existe`
+    if (categoria === "suplementacion" || categoria === "indumentaria") {
+      let productosFiltrados = productos.filter(producto => producto.categoria === categoria);
+      if (productosFiltrados.length > 0) {
+        alert(listar(productosFiltrados));
+      }
+    } else {
+      alert(`${mensajeError}`);
+    }
   }
-
-} while (opcion != 0); {
+  
+} while (opcion != 0); 
   alert("Gracias por su visita")
-}
+
 
 function listar(productos) {
   salida = productos.map(producto => `Nombre: ${producto.nombre} - ID ${producto.id}`).join("\n")
@@ -53,175 +73,30 @@ function infoDelProducto(id) {
   }
 }
 
+// Filtrar los nombres de los productos, el id y el stock mediante foreach
 
-/* let productosFiltrados = productos.filter(producto => producto.categoria === "suplementacion"); {
-    console.log(productosFiltrados)
-} */
-
-// Filtrar productos por precio mayor a 6000
-
-/* let productoFiltrados = productos.filter(producto => producto.precio > 6000); {
-    console.log(productoFiltrados)
-}
- */
-
+productos.forEach((producto, precio, stock) => {
+  console.log(`Nombre del producto "${producto.nombre}", Precio "${producto.precio}", Stock "${producto.stock}"`)
+})
 
 // Ordenar productos de mayor a menor precio
 
-/* productos.sort((productoA, productoB) => productoA.precio - productoB.precio); {
+ productos.sort((productoA, productoB) => productoA.precio - productoB.precio); {
     console.log(productos)
-} */
+} 
 
 // Ordenar productos de menor a mayor
 
-/* productos.sort((productosA, productosB) => productosB.precio - productosA.precio); {
+productos.sort((productosA, productosB) => productosB.precio - productosA.precio); {
     console.log(productos)
-} */
-
-
-/* let precioMayor = productos.find(producto => producto.precio >= 5000); {
-    console.log(precioMayor)
-}
- */
-
-// Buscar un producto del carrito especifico mediante un prompt
-
-/* let buscador = prompt("Que te gustaria comprar ?")
-
-buscador = buscador.toLocaleLowerCase();
-
-productoEncontrado = productos.find(producto => producto.nombre === buscador);
-
-if (productoEncontrado) {
-    console.log(`El producto que elegiste es ${productoEncontrado.nombre}`)
-} else {
-    console.log("El producto no fue encontrado en el carrito")
-} */
-
-// Agregar producto a un array
-
-/* let nuevoProducto = {
-    id: 23,
-    nombre: "bcaa",
-    categoria: "suplementacion",
-    stock: 4,
-    precio: 6500
 }
 
-productos.push(nuevoProducto);
-
-console.log(productos) */
+function agregarAlCarrito(carrito, producto) {
+  
+}
 
 // Eliminar producto de un array
 
-/* let eliminarProducto = productos.splice(2, 1); { // Elimino el numero 2 de mi lista, si coloco 1 al final del parametro
+let eliminarProducto = productos.splice(2, 1); { // Elimino el numero 2 de mi lista, si coloco 1 al final del parametro
     console.log(productos)
-} */
-
-// Filtrar los nombres de los productos y el id mediante foreach
-
-/* productos.forEach((producto, id) => {
-    console.log(producto.nombre, producto.id)
-}) */
-
-
-
-
-
-
-
-/* function filtrar(listaAOrdenar, propiedad, propiedad2, valor, operador) {
-    switch (operador) {
-      case "===":
-        return listaAOrdenar.filter(elemento => elemento[propiedad] === valor)
-      case "!==":
-        return listaAOrdenar.filter(elemento => elemento[propiedad] !== valor)
-      case "includes":
-        return listaAOrdenar.filter(elemento => elemento[propiedad].includes(valor) || elemento[propiedad2].includes(valor))
-      default:
-        break;
-    }
-  } */
-  // console.log(filtrar(productos, "categoria", "deportes", "==="))
-  // console.log(filtrar(productos, "categoria", "deportes", "!=="))
-  // console.log(filtrar(productos, "nombre", "categoria", "or", "includes"))
-  
-  /* function ordenar(listaAOrdenar, esAscendente, propiedad) {
-    listaAOrdenar.sort((a, b) => {
-      if (a[propiedad] > b[propiedad]) {
-        return 1
-      }
-      if (a[propiedad] < b[propiedad]) {
-        return -1
-      }
-      return 0
-    })
-  
-    if (!esAscendente) {
-      listaAOrdenar.reverse()
-    }
-  
-    return listaAOrdenar
-  } */
-  // console.log(ordenar(productos, true, "precio"))
-  // console.log(ordenar(productos, false, "nombre"))
-  
-  /* let mensaje = `
-    1 - Listar productos
-    2 - Filtrar por categoria
-    3 - Ordenar por propiedad de manera asc
-    4 - Ordenar por propiedad de manera des
-    5 - Agregar producto al carrito por id
-    6 - Ver costo total del carrito
-    7 - Finalizar compra
-    0 - Salir
-  `
-  alert(mensaje) */
-  
-  // opcion 5
-  // 1 lista para que pueda ver los ids de los productos
-  // 2 prompt para que ingrese el id
-  // 3 metodo find para buscar el producto por id dentro del array productos
-  // 4 agregar producto al carrito con push
-
-  // Crear un programa que determine si un número introducido en un Prompt es par o no, la respuesta será mostrada en una alerta.
-
-  /* let numeroIngresado = parseInt(prompt("Ingrese el numero del 1 al 20"))
-
-  if (numeroIngresado % 2 === 0) {
-    alert(`El numero que ingresaste es par ${numeroIngresado}`)
-  } else {
-    alert(`El numero ingresado es inpar ${numeroIngresado}`)
-  } */
-
-  // Crear un programa que determine si un número introducido en un Prompt es divisible por 5 o no, mostrar el resultado con console.log
-
-  /* let numeroIngresado = parseInt(prompt("Ingrese un numero"))
-
-  if (numeroIngresado % 5 === 0) {
-    console.log(`El numero ingresado se puede dividir por 5 el resultado es ${numeroIngresado / 5}`)
-  } else {
-    alert("No se puede dividir por 5")
-  } */
-
-  // Crear un programa que le pida al usuario dos números en un Prompt y luego muestre en un alerta el número mayor.
-
- /*  let numeroIngresado = parseInt(prompt("Ingrese el primer numero"))
-  let numeroIngresadoDos = parseInt(prompt("Ingrese el segundo numero"))
-
-  if (numeroIngresado > numeroIngresadoDos) {
-    alert(`El numero mas grande que elegiste es ${numeroIngresado}`);
-  } else if (numeroIngresadoDos > numeroIngresado) {
-    alert(`El numero mas grande que elegiste es ${numeroIngresadoDos}`)
-  } else {
-    alert("Los numeros son iguales")
-  } */
-
-  // Crear un programa que le pida al usuario primero un números al usuario a través de un prompt y luego un segundo número para luego mostrar en un alerta el número mayor, esta vez realizar el ejercicio ocupando un if ternario.
-
-  /* let numeroIngresado = parseInt(prompt("Ingrese el primer numero"))
-  let numeroIngresadoDos = parseInt(prompt("Ingrese el segundo numero"))
-  let resultado = 0
-
- resultado = numeroIngresado > numeroIngresadoDos ? numeroIngresado : numeroIngresadoDos
-alert(`El numero mayor ingresado es ${resultado}`) */
+}

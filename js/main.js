@@ -625,3 +625,14 @@ console.log(`La cadena "${cadena}" tiene ${contadorVocales} vocales.`);
  */
 
 // Imprimir números en reversa: Imprime los números del 10 al 1 en orden descendente utilizando un ciclo for.
+
+
+/* let mensaje = `
+    1 - Listar productos
+    2 - Filtrar por categoria
+    3 - Ordenar por propiedad de manera asc
+    4 - Ordenar por propiedad de manera des
+    5 - Agregar producto al carrito por id
+    6 - Ver costo total del carrito
+    7 - Finalizar compra
+    0 - Salir
