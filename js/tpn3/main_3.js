@@ -144,7 +144,40 @@ function renderizarTarjetas(productos) {
 
     contenedor.appendChild(tarjetaProducto); // Agrego un hijo a tarjetaproducto
 
-    /* let botonAgregarAlCarrito = document.getElementById("producto.id")
-      botonAgregarAlCarrito.addEventListener("click", (e) => agregarAlCarrito (productos, e)) */
+    let botonAgregarAlCarrito = document.getElementById(`${producto.id}`)
+      botonAgregarAlCarrito.addEventListener("click", (e) => agregarAlCarrito (productos, e))
   });
+}
+
+function agregarAlCarrito(productos, e) {
+  let productoBuscado = productos.find((producto) => producto.id === Number(e.target.id))
+
+    let carrito = recuperarCarrito()
+    carrito.push(productoBuscado)
+    localStorage.setItem("carrito" , JSON.stringify(carrito))
+
+    renderizarCarrito()
+}
+
+
+function renderizarCarrito() {
+  let contenedor = document.getElementById("carrito")
+  contenedor.innerHTML = ""
+  let carrito = localStorage.getItem("carrito") ? JSON.parse(localStorage.getItem("carrito")) : []
+
+  carrito.forEach(producto => {
+    if (producto && producto.nombre) {
+      let tarjetaProducto = document.createElement("div")
+      tarjetaProducto.innerHTML = `
+      <p>${producto.nombre}</p>
+      <p>${producto.precio}</p>
+      `
+      contenedor.appendChild(tarjetaProducto)
+      
+    }
+  })
+}
+
+function recuperarCarrito() {
+  return localStorage.getItem("carrito") ? JSON.parse(localStorage.getItem("carrito")) : []
 }
