@@ -1,18 +1,76 @@
+// TP nº2 CoderHouse
+
 let productos = [
-    { id: 2, nombre: "Proteina", categoria: "suplementacion", stock: 10, precio: 6000 },
-    { id: 3, nombre: "Creatina", categoria: "suplementacion", stock: 4, precio: 12000 },
-    { id: 5, nombre: "Aminoacidos", categoria: "suplementacion", stock: 5, precio: 5000 },
-    { id: 6, nombre: "Prentreno", categoria: "suplementacion", stock: 6, precio: 6500 },
-    { id: 7, nombre: "Minerales", categoria: "suplementacion", stock: 7, precio: 7000 },
-    { id: 9, nombre: "Barritas de proteina", categoria: "snacks", stock: 25, precio: 500 },
-    { id: 10, nombre: "Barritas de proteina vegana", categoria: "snacks", stock: 28, precio: 700 },
-    { id: 12, nombre: "Remera", categoria: "indumentaria", stock: 3, precio: 5000 },
-    { id: 15, nombre: "Muñequera", categoria: "indumentaria", stock: 2, precio: 5200 },
-    { id: 17, nombre: "Musculosa", categoria: "indumentaria", stock: 4, precio: 6300 },
-    { id: 19, nombre: "Campera", categoria: "indumentaria", stock: 3, precio: 12500 },
-    { id: 20, nombre: "Buzo", categoria: "indumentaria", stock: 3, precio: 15000 },
-    { id: 21, nombre: "Termica", categoria: "indumentaria", stock: 4, precio: 10000 },
-    { id: 22, nombre: "Pantalon", categoria: "indumentaria", stock: 5, precio: 8000 },
+    { id: 2,
+      nombre: "Proteina",
+      categoria: "suplementacion",
+      stock: 10,
+      precio: 6000 },
+    { id: 3,
+      nombre: "Creatina",
+      categoria: "suplementacion",
+      stock: 4,
+      precio: 12000 },
+    { id: 5,
+      nombre: "Aminoacidos",
+      categoria: "suplementacion",
+      stock: 5,
+      precio: 5000 },
+    { id: 6,
+      nombre: "Prentreno",
+      categoria: "suplementacion",
+      stock: 6,
+      precio: 6500 },
+    { id: 7,
+      nombre: "Minerales",
+      categoria: "suplementacion",
+      stock: 7,
+      precio: 7000 },
+    { id: 9,
+      nombre: "Barritas de proteina",
+      categoria: "snacks",
+      stock: 25,
+      precio: 500 },
+    { id: 10,
+      nombre: "Barritas de proteina vegana",
+      categoria: "snacks",
+      stock: 28,
+      precio: 700 },
+    { id: 12,
+      nombre: "Remera",
+      categoria: "indumentaria",
+      stock: 3,
+      precio: 5000 },
+    { id: 15,
+      nombre: "Muñequera",
+      categoria: "indumentaria",
+      stock: 2,
+      precio: 5200 },
+    { id: 17,
+      nombre: "Musculosa",
+      categoria: "indumentaria",
+      stock: 4,
+      precio: 6300 },
+    { id: 19,
+      nombre: "Campera",
+      categoria: "indumentaria",
+      stock: 3,
+      precio: 12500 },
+    { id: 20,
+      nombre: "Buzo",
+      categoria: "indumentaria",
+      stock: 3,
+      precio: 15000 },
+    { id: 21,
+      nombre: "Termica",
+      categoria: "indumentaria",
+      stock: 4,
+      precio: 10000 },
+    { id: 22,
+      nombre: "Pantalon",
+      categoria: "indumentaria",
+      stock: 5,
+      precio: 8000 },
 ]
 // Agregar producto a un array (push)
 
@@ -53,8 +111,13 @@ do {
     } else {
       alert(`${mensajeError}`);
     }
+  }else if (opcion ===3) {
+    let id = Number(prompt("Ingrese el id de producto para mas información\n" + listar(productos)))
+    agregarAlCarrito(carrito, id)
+  }else if (opcion ===5) {
+    let total = carrito.reduce((totalAcumulado, producto) => totalAcumulado + producto.subtotal, 0)
+    alert(`El total de tu compra es: ${total}`)
   }
-  
 } while (opcion != 0); 
   alert("Gracias por su visita")
 
@@ -71,6 +134,28 @@ function infoDelProducto(id) {
   }else {
     alert("Producto buscado no encontrado")
   }
+}
+
+// Agregar al carrito
+
+function agregarAlCarrito(carrito, id){
+  let productoBuscado = productos.find (producto => producto.id === id)
+  let productoEncarrito = carrito.find(producto => producto.id === id)
+  if (productoEncarrito) {
+    productoEncarrito.unidades++
+    productoEncarrito.subtotal = productoEncarrito.precioUnitario *
+    productoEncarrito.unidades
+  }else {
+    carrito.push({
+      id:productoBuscado.id,
+      nombre:productoBuscado.nombre,
+      unidades:1,
+      precioUnitario: productoBuscado.precio,
+      subtotal: productoBuscado.precio
+    })
+  }
+  carrito.push(productoBuscado)
+  console.log(carrito)
 }
 
 // Filtrar los nombres de los productos, el id y el stock mediante foreach
@@ -91,12 +176,16 @@ productos.sort((productosA, productosB) => productosB.precio - productosA.precio
     console.log(productos)
 }
 
-function agregarAlCarrito(carrito, producto) {
-  
-}
 
 // Eliminar producto de un array
 
 let eliminarProducto = productos.splice(2, 1); { // Elimino el numero 2 de mi lista, si coloco 1 al final del parametro
     console.log(productos)
+}
+
+function renderizarCarrito (productos) {
+  let contenedor = document.getElementById("carrito")
+  productos.forEach(producto => {
+    let tarjetaProducto = document.createElement("div")
+  })
 }

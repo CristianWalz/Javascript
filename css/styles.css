@@ -64,6 +64,34 @@ h6 {
   gap: 6px;
   font-size: 0.8rem;
 }
+  /* Modificando */
+  .description-index {
+    background-color: lightgray;
+  }
+  
+.tarjetaProducto {
+  background-color: lightcoral;
+  width: 200px;
+  height: 200px;
+  margin: 10px 0 10px;
+}
+img {
+  width: 100px;
+  height: 100px;
+}
+#productos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  }
+#carrito {
+  flex-direction: column;
+  min-height: 150px;
+  border: 1px solid black
+}
+.tarjetaProducto {
+  display: grid;
+}
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .header-wrapper {
@@ -152,8 +180,6 @@ h6 {
   left: 15%;
 }
 
-.description-index {
-  background-color: lightgray;
-}
+
 
 /*# sourceMappingURL=styles.css.map */

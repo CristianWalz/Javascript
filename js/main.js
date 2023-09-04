@@ -636,3 +636,52 @@ console.log(`La cadena "${cadena}" tiene ${contadorVocales} vocales.`);
     6 - Ver costo total del carrito
     7 - Finalizar compra
     0 - Salir
+    */
+
+
+    /* function filtrar(listaAOrdenar, propiedad, propiedad2, valor, operador) {
+    switch (operador) {
+      case "===":
+        return listaAOrdenar.filter(elemento => elemento[propiedad] === valor)
+      case "!==":
+        return listaAOrdenar.filter(elemento => elemento[propiedad] !== valor)
+      case "includes":
+        return listaAOrdenar.filter(elemento => elemento[propiedad].includes(valor) || elemento[propiedad2].includes(valor))
+      default:
+        break;
+    }
+  } */
+  // console.log(filtrar(productos, "categoria", "deportes", "==="))
+  // console.log(filtrar(productos, "categoria", "deportes", "!=="))
+  // console.log(filtrar(productos, "nombre", "categoria", "or", "includes"))
+  
+  /* function ordenar(listaAOrdenar, esAscendente, propiedad) {
+    listaAOrdenar.sort((a, b) => {
+      if (a[propiedad] > b[propiedad]) {
+        return 1
+      }
+      if (a[propiedad] < b[propiedad]) {
+        return -1
+      }
+      return 0
+    })
+  
+    if (!esAscendente) {
+      listaAOrdenar.reverse()
+    }
+  
+    return listaAOrdenar
+  } */
+  // console.log(ordenar(productos, true, "precio"))
+  // console.log(ordenar(productos, false, "nombre"))
+  
+  /* let mensaje = `
+    1 - Listar productos
+    2 - Filtrar por categoria
+    3 - Ordenar por propiedad de manera asc
+    4 - Ordenar por propiedad de manera des
+    5 - Agregar producto al carrito por id
+    6 - Ver costo total del carrito
+    7 - Finalizar compra
+    0 - Salir
+*/
