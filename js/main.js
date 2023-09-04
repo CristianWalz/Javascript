@@ -685,3 +685,37 @@ console.log(`La cadena "${cadena}" tiene ${contadorVocales} vocales.`);
     7 - Finalizar compra
     0 - Salir
 */
+
+principal()
+
+function principal() {
+  let productosOriginal = [
+    { id: 2, nombre: "pelota de futbol", categoria: "deportes", stock: 2, precio: 5000, rutaImagen: "pelota-futbol.jpg" },
+    { id: 5, nombre: "gorra 1", categoria: "indumentaria", stock: 7, precio: 2650, rutaImagen: "gorra.jpg" },
+    { id: 7, nombre: "remera mangas cortas", categoria: "indumentaria", stock: 4, precio: 4500, rutaImagen: "remera.jpg" },
+    { id: 9, nombre: "pelota de voley", categoria: "deportes", stock: 1, precio: 2800, rutaImagen: "pelota-voley.jpg" },
+    { id: 12, nombre: "remera mangas largas", categoria: "indumentaria", stock: 3, precio: 7300, rutaImagen: "remera-ml.jpeg" },
+    { id: 15, nombre: "short de basquet", categoria: "indumentaria", stock: 8, precio: 5600, rutaImagen: "short.jpg" },
+    { id: 17, nombre: "gorra 2", categoria: "indumentaria", stock: 7, precio: 2650, rutaImagen: "gorra2.jpg" },
+  ]
+
+  let input = document.getElementById("buscador")
+  input.addEventListener("input", () => filtrar(productosOriginal, input))
+
+  let boton = document.getElementById("boton")
+  boton.addEventListener("click", () => filtrar(productosOriginal, input))
+
+  let botonesFiltrosCat = document.getElementsByClassName("botonFiltro")
+  for (const boton of botonesFiltrosCat) {
+    boton.addEventListener("click", () => filtrar(productosOriginal, boton))
+  }
+
+  let verOcultarCarrito = document.getElementById("verCarrito")
+  verOcultarCarrito.addEventListener("click", mostrarOcultar)
+
+  let botonComprar = document.getElementById("botonComprar")
+  botonComprar.addEventListener("click", () => finalizarCompra(productos))
+
+  renderizarCarrito()
+  renderizarTarjetas(productosOriginal)
+}

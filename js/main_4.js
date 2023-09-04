@@ -1,5 +1,3 @@
-principal ()
-function principal() {
 let productos = [
   {
     id: 2,
@@ -113,25 +111,26 @@ let productos = [
     precio: 8000,
     rutaImagen: "pantalon.webp",
   },
- ];
+];
 
-  
-  let inputBuscador = document.getElementById("buscador")
-  let botonBuscar = document.getElementById("buscar")
-  botonBuscar.addEventListener("click",() => filtrar(productos, inputBuscador))
-  renderizarTarjetas(productos)
+let inputBuscarProducto = document.getElementById("buscador");
+let botonBuscar = document.getElementById("buscar");
+botonBuscar.addEventListener("click", () =>
+  filtrar(productos, inputBuscarProducto)
+);
 
-}
+let contenedor = document.getElementById("productos"); //Capturo mi contenedor de html "Productos"
 
 function filtrar(productos, input) {
-  let textoBuscado = input.value.toLowerCase()
-  let productosFiltrados = productos.filter (producto => producto.nombre.toLowerCase().includes(textoBuscado))
-  renderizarTarjetas(productosFiltrados)
+  let productosFiltrados = productos.filter((producto) =>
+    producto.nombre.includes(input.value)
+  );
+  renderizarTarjetas(productosFiltrados);
 }
 
-function renderizarTarjetas(productos) {
-  let contenedor = document.getElementById("productos")
-  contenedor.innerHTML = ""
+function renderizarTarjetas() {
+  contenedor.innerHTML = ""; // Limpiar el contenido existente
+
   productos.forEach((producto) => {
     let tarjetaProducto = document.createElement("div"); // Por cada producto crear un "div"
     tarjetaProducto.className = "tarjetaProducto"; // Agregando nombre a la clase
@@ -146,5 +145,28 @@ function renderizarTarjetas(productos) {
 
     /* let botonAgregarAlCarrito = document.getElementById("producto.id")
       botonAgregarAlCarrito.addEventListener("click", (e) => agregarAlCarrito (productos, e)) */
+  });
+}
+renderizarTarjetas(); //llamar a renderizarTarjetas al cargar la pagina
+
+function agregarAlCarrito(productos) {
+  let productoBuscado = productos.find(
+    (producto) => producto.id === e.target.id
+  );
+}
+
+function renderizarCarrito() {
+  let contenedor = document.getElementById("carrito");
+  let carrito = localStorage.getItem("carrito")
+    ? JSON.parse(localStorage.getItem("carrito"))
+    : [];
+
+  carrito.forEach((producto) => {
+    let tarjetaProducto = document.createElement("div");
+    tarjetaProducto.innerHTML = `
+          <p>${producto.nombre}</p>
+          <p>${producto.precio}</p>`;
+
+    contenedor.appendChild(tarjetaProducto);
   });
 }
